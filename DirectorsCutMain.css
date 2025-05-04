@@ -1,0 +1,188 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: #3B3B3B;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+/* header stuff */
+.header {
+    background-color: #781e7b;
+    border-bottom: 3px solid black;
+    position: sticky; /* header follows you when you scroll */
+    top: 0; /* header follows you when you scroll */
+    z-index: 100; /* makes it so that the header is always on top, ex if you hover over a card, the header will still be visible, not buggy */
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+/* Logo Styles */
+.logo {
+    height: 150px; /* Adjust based on your image proportions */
+    max-width: 800px; /* Control maximum logo size */
+    object-fit: contain;
+    margin: 0.5rem 0;
+}
+
+/* responsive code for the logo so it suits for all/most screenes */
+@media (max-width: 768px) {
+    .logo {
+        height: 50px;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+        max-width: 200px;
+    }
+}
+
+/* top right nav styles or positions */
+.nav-links {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+
+
+
+
+/* Main Content Styles */
+.main-container {
+    max-width: 1400px;
+    margin: 6rem auto;     /* space between header and cards section */
+}
+
+.category-section {
+    margin-bottom: 12rem;  /* space between card sections */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+
+
+
+
+/* Cards Grid */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* 5 rows x 1 column */
+    gap: 2.5rem;
+}
+
+.movie-card {
+    aspect-ratio: 2/3;
+    background-size: cover; 
+    background-position: center; /* center of the image*/
+    border: 3px solid black;
+    border-radius: 8px; /* gives a rounded look to the borders*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.1); /* how big the cards get when hovering */
+    box-shadow: 5px 5px 15px white /* white shadow animation when hovering */
+}
+
+
+
+
+/* button styles for the recommend us button made with javascript*/
+.cta-button {
+    background-color: #781e7b;
+    color: white;
+    border: 2px solid black;
+    padding: 0.75rem 1.5rem; /* gives padding to the border and the text */
+    font-size: 1.5rem; 
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* hover animation for the button   */
+.cta-button:hover {
+    background-color: #9e279e;
+    transform: scale(1.05);
+}
+
+/* the images for the movies/shows (cards basically) */
+.alien { background-image: url(Images/alien.jpg); }
+.civil-war { background-image: url(Images/civilwar.jpg); }
+.dune { background-image: url(Images/dune.jpg); }
+.wild-robot { background-image: url(Images/wildrobot.jpg); }
+.mad-max { background-image: url(Images/madmax.jpg); }
+.arcane { background-image: url(Images/arcane.jpg); }
+.shogun { background-image: url(Shogun_Poster_1.webp); }
+.penguin { background-image: url(Images/penguin.jpg); }
+.frieren { background-image: url(Images/frieren.jpg); }
+.xmen { background-image: url(Images/xmen97.jpg); }
+.mickey17 { background-image: url(Images/mickey17.jpg); }
+.f1 { background-image: url(Images/f1.jpg); }
+.sinners { background-image: url(Images/sinners.jpg); }
+.superman { background-image: url(Images/superman.jpg); }
+.avatar { background-image: url(Images/avatar3.webp); }
+.bear { background-image: url(Images/bear.jpg); }
+.tlou { background-image: url(Images/tlou.jpg); }
+.severance { background-image: url(Images/severance.jfif); }
+.daredevil { background-image: url(Images/daredevil.jpg); }
+.opm { background-image: url(Images/opm.jpeg); }
+
+
+
+
+
+/* responsive code for the "cards" so it suits for all/most screenes */
+@media (max-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    .movie-card {
+        aspect-ratio: 16/9;
+    }
+}
